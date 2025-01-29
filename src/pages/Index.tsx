@@ -28,11 +28,11 @@ const Index = () => {
     const calculateIRRF = (gross: number, inss: number) => {
       const base = gross - inss;
       
-      if (base <= 2112.00) return 0;
-      if (base <= 2826.65) return (base * 0.075) - 158.40;
-      if (base <= 3751.05) return (base * 0.15) - 370.40;
-      if (base <= 4664.68) return (base * 0.225) - 651.73;
-      return (base * 0.275) - 884.96;
+      if (base <= 2259.20) return 0;
+      if (base <= 2826.65) return (base * 0.075) - 169.44;
+      if (base <= 3751.05) return (base * 0.15) - 381.44;
+      if (base <= 4664.68) return (base * 0.225) - 662.77;
+      return (base * 0.275) - 896.00;
     };
 
     // Método de aproximação para encontrar o valor bruto
@@ -155,11 +155,45 @@ const Index = () => {
         </Card>
 
         <Card className="p-6 bg-black/50 border border-[#8B5CF6]/30 shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-sm">
-          <h2 className="text-lg font-semibold text-[#8B5CF6] mb-4">Informações</h2>
-          <p className="text-sm text-gray-300">
-            Esta calculadora utiliza as tabelas de IRRF e INSS vigentes em 2024 para realizar os cálculos.
-            Os valores são aproximados e podem variar dependendo de outros fatores como dependentes e deduções específicas.
-          </p>
+          <h2 className="text-lg font-semibold text-[#8B5CF6] mb-4">Tabela IRRF 2024</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left text-gray-300">
+              <thead>
+                <tr className="border-b border-[#8B5CF6]/30">
+                  <th className="py-2 px-4">Base de cálculo</th>
+                  <th className="py-2 px-4">Alíquota</th>
+                  <th className="py-2 px-4">Dedução</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[#8B5CF6]/20">
+                  <td className="py-2 px-4">Até R$ 2.259,20</td>
+                  <td className="py-2 px-4">-</td>
+                  <td className="py-2 px-4">-</td>
+                </tr>
+                <tr className="border-b border-[#8B5CF6]/20">
+                  <td className="py-2 px-4">De R$ 2.259,21 até R$ 2.826,65</td>
+                  <td className="py-2 px-4">7,5%</td>
+                  <td className="py-2 px-4">R$ 169,44</td>
+                </tr>
+                <tr className="border-b border-[#8B5CF6]/20">
+                  <td className="py-2 px-4">De R$ 2.826,66 até R$ 3.751,05</td>
+                  <td className="py-2 px-4">15,0%</td>
+                  <td className="py-2 px-4">R$ 381,44</td>
+                </tr>
+                <tr className="border-b border-[#8B5CF6]/20">
+                  <td className="py-2 px-4">De R$ 3.751,06 até R$ 4.664,68</td>
+                  <td className="py-2 px-4">22,5%</td>
+                  <td className="py-2 px-4">R$ 662,77</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4">Acima de R$ 4.664,68</td>
+                  <td className="py-2 px-4">27,5%</td>
+                  <td className="py-2 px-4">R$ 896,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </Card>
       </div>
     </div>
