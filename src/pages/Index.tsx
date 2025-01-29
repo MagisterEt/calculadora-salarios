@@ -99,16 +99,16 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-8">
+    <div className="min-h-screen bg-[#1A1F2C] bg-gradient-to-br from-[#1A1F2C] to-[#2C1A2F] p-4 md:p-8">
       <div className="max-w-2xl mx-auto space-y-6">
-        <Card className="p-6 shadow-lg">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        <Card className="p-6 bg-black/50 border border-[#8B5CF6]/30 shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-sm">
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] mb-6">
             Calculadora Salário Bruto 2024
           </h1>
           
           <div className="space-y-4">
             <div>
-              <label htmlFor="liquid" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="liquid" className="block text-sm font-medium text-[#8B5CF6] mb-1">
                 Valor Líquido Desejado
               </label>
               <Input
@@ -117,13 +117,13 @@ const Index = () => {
                 placeholder="R$ 0,00"
                 value={liquidValue}
                 onChange={(e) => setLiquidValue(e.target.value)}
-                className="w-full"
+                className="w-full bg-black/30 border-[#8B5CF6]/50 text-white placeholder-gray-500 focus:border-[#D946EF] focus:ring-[#D946EF] transition-colors"
               />
             </div>
 
             <Button 
               onClick={handleCalculate}
-              className="w-full bg-indigo-600 hover:bg-indigo-700"
+              className="w-full bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] hover:from-[#7C3AED] hover:to-[#C026D3] text-white font-semibold shadow-[0_0_10px_rgba(139,92,246,0.3)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]"
             >
               Calcular Valor Bruto
             </Button>
@@ -131,32 +131,32 @@ const Index = () => {
 
           {result && (
             <div className="mt-6 space-y-4">
-              <h2 className="text-lg font-semibold text-gray-800">Resultado:</h2>
+              <h2 className="text-lg font-semibold text-[#8B5CF6]">Resultado:</h2>
               <div className="grid gap-3">
-                <div className="p-3 bg-green-50 rounded-lg">
-                  <p className="text-sm text-gray-600">Salário Bruto:</p>
-                  <p className="text-lg font-bold text-green-700">{formatCurrency(result.gross)}</p>
+                <div className="p-4 bg-black/40 border border-[#8B5CF6]/30 rounded-lg shadow-[0_0_10px_rgba(139,92,246,0.2)]">
+                  <p className="text-sm text-[#8B5CF6]">Salário Bruto:</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(result.gross)}</p>
                 </div>
-                <div className="p-3 bg-red-50 rounded-lg">
-                  <p className="text-sm text-gray-600">Desconto INSS:</p>
-                  <p className="text-lg font-bold text-red-700">{formatCurrency(result.inss)}</p>
+                <div className="p-4 bg-black/40 border border-[#D946EF]/30 rounded-lg shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+                  <p className="text-sm text-[#D946EF]">Desconto INSS:</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(result.inss)}</p>
                 </div>
-                <div className="p-3 bg-red-50 rounded-lg">
-                  <p className="text-sm text-gray-600">Desconto IRRF:</p>
-                  <p className="text-lg font-bold text-red-700">{formatCurrency(result.irrf)}</p>
+                <div className="p-4 bg-black/40 border border-[#D946EF]/30 rounded-lg shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+                  <p className="text-sm text-[#D946EF]">Desconto IRRF:</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(result.irrf)}</p>
                 </div>
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-gray-600">Salário Líquido:</p>
-                  <p className="text-lg font-bold text-blue-700">{formatCurrency(result.liquid)}</p>
+                <div className="p-4 bg-black/40 border border-[#8B5CF6]/30 rounded-lg shadow-[0_0_10px_rgba(139,92,246,0.2)]">
+                  <p className="text-sm text-[#8B5CF6]">Salário Líquido:</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(result.liquid)}</p>
                 </div>
               </div>
             </div>
           )}
         </Card>
 
-        <Card className="p-6 shadow-lg">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Informações</h2>
-          <p className="text-sm text-gray-600">
+        <Card className="p-6 bg-black/50 border border-[#8B5CF6]/30 shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-sm">
+          <h2 className="text-lg font-semibold text-[#8B5CF6] mb-4">Informações</h2>
+          <p className="text-sm text-gray-300">
             Esta calculadora utiliza as tabelas de IRRF e INSS vigentes em 2024 para realizar os cálculos.
             Os valores são aproximados e podem variar dependendo de outros fatores como dependentes e deduções específicas.
           </p>
