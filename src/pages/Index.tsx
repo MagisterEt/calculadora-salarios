@@ -4,7 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import { Toggle } from "@/components/ui/toggle";
-import { calculateGrossFromNet, calculateNetFromGross } from "@/utils/salaryCalculations";
+import { 
+  calculateGrossFromNet, 
+  calculateNetFromGross,
+  calculateINSS,
+  calculateIRRF 
+} from "@/utils/salaryCalculations";
 
 const Index = () => {
   const [mode, setMode] = useState<"gross" | "net">("gross");
